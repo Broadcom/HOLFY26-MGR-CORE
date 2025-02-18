@@ -6,7 +6,6 @@ filekey.key
 .python_history
 .ssh/id_rsa
 .viminfo
-cronfile
 encryptconfig.py
 generatekey.py
 update.sh
