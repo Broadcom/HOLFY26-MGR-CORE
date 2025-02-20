@@ -127,19 +127,4 @@ home=/home/holuser
 PYTHONPATH=/usr/lib/python3/dist-packages:${home}/hol
 export PYTHONPATH
 
-# added for VMware Hands-on Labs (XRDP requires bashrc)
-dom=$(hostname -A | cut -f2- -d'.')
-HTTP_PROXY=http://proxy:3128
-export HTTP_PROXY
-http_proxy=http://proxy:3128
-export http_proxy
-HTTPS_PROXY=http://proxy:3128
-export HTTPS_PROXY
-https_proxy=http://proxy:3128
-export https_proxy
-no_proxy=localhost,127.0.0.0/8,::1,.${dom}
-export no_proxy
-NO_PROXY=localhost,127.0.0.0/8,::1,.${dom}
-export NO_PROXY
-
 

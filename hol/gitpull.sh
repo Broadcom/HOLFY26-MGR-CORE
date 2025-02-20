@@ -12,17 +12,12 @@ logfile='/tmp/labstartupmgr.log'
 
 cd /home/core
 
-internalgit=10.138.147.254
-externalgit=holgitlab.oc.vmware.com
-
-status=`ssh -o ConnectTimeout=5 -T git@$internalgit`
-if [ $? != 0 ];then
-   repodir='/root/.git'
-   cat /home/core/.git/config | sed s/$internalgit/$externalgit/g > /home/core/.git/newconfig
-   mv /home/core/.git/config /home/core/.git/oldconfig
-   mv /home/core/.git/newconfig /home/core/.git/config
-   chmod 664 /home/core/.git/config
-fi
+proxyready=`nmap -p 3128 proxy | grep open`
+while [ $? != 0 ];do
+   echo "Waiting for proxy to be ready..." >> ${logfile}
+   proxyready=`nmap -p 3128 proxy | grep open`
+   sleep 1
+done
 
 ctr=0
 while true;do
