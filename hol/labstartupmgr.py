@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# version 1.4 21-May 2024
+# version 1.5 21-May 2025
 import socket
 import datetime
 import os
@@ -18,7 +18,7 @@ from cryptography.fernet import Fernet
 from xml.dom.minidom import parseString
 
 locallog = '/tmp/labstartupmgr.log'
-maincon = 'mainconsole'
+maincon = 'console'
 
 proxies = {
     "http": "http://proxy:3128",
