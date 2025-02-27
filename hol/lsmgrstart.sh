@@ -23,7 +23,7 @@ logfile='/tmp/labstartupmgr.log'
 vmtoolsd=/usr/sbin/vmtoolsd
 
 # the list of tenants using VM Script for ER
-ertenants=':hol-test:' # case counts
+ertenants='HOL:hol-test:' # case counts
 
 $vmtoolsd --cmd 'info-get guestinfo.ovfEnv' > /tmp/guestinfo.ovfEnv 2>&1
 tmptenant=`grep vlp_vapp_tenant_name /tmp/guestinfo.ovfEnv | awk '{print $3}' | cut -d'=' -f2 | sed s/\"//g`
