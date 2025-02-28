@@ -1,5 +1,5 @@
 #! /bin/sh
-# version 1.4.2 - 30-January 2025
+# version 1.4.3 - 28-February 2025
 
 runlabstartupmgr() {
    # we only want one labstartupmgr.py running
